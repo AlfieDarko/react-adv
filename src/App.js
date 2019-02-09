@@ -5,8 +5,14 @@ import LazyLoad from "./components/lazySuspence/LazyLoad";
 import Family from "./components/contextAPI/Person.jsx";
 import MyProvider from "./context.js";
 import ErrorCounter from "./components/errorBoundaries/index.js";
+import MyInput from "./components/refForwarding/MyInput.js";
 
 class App extends Component {
+  textInput = React.createRef();
+
+  componentDidMount() {
+    this.textInput.current.focus();
+  }
   render() {
     return (
       <>
@@ -29,6 +35,10 @@ class App extends Component {
               {/* IN DEV: JUST PRESS ESCAPE TO CONTINUE */}
               {/* YOU ONLY SEE SEAMLESS BOUNDARY IN PROD */}
               <ErrorCounter />
+
+              <p>Ref Forwarding</p>
+
+              <MyInput ref={this.textInput} />
             </header>
           </div>
         </MyProvider>
