@@ -18,7 +18,7 @@ class BuggyComponent extends Component {
   render() {
     if (this.state.counter === 5) {
       //   Simulate error
-      throw new Error("Ooops!");
+      throw new Error("I have crashed!");
     }
     return <button onClick={this.handleClick}>{this.state.counter}</button>;
   }

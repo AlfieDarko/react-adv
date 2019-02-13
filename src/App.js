@@ -11,6 +11,7 @@ class App extends Component {
   textInput = React.createRef();
 
   componentDidMount() {
+    // accessing current to get the current DOM node
     this.textInput.current.focus();
   }
   render() {
